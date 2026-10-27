@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Imanooo turns 28">
+<meta property="og:description" content="And she's coming on a road trip. Sunday, November 29, 2026.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1F3B2D">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<title>Imanooo Turns 28</title>
+<meta name="description" content="Imanooo is turning 28, and she's coming on a road trip. Sunday, November 29, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <p class="sr" id="stepAnnounce" aria-live="polite"></p>
+
+  <div class="steps" id="steps">
+
+    <!-- 1 cover -->
+    <section class="step active" data-bg="cream" aria-label="Cover">
+      <div class="sun" aria-hidden="true"><span class="n">28</span></div>
+      <h1 class="cover-name" id="coverName">Imanooo</h1>
+      <p class="cover-sub">is turning 28, and she’s coming on a road trip.</p>
+      <p class="small" style="text-align:center">Tap through. It’s short, I promise.</p>
+    </section>
+
+    <!-- 2 date -->
+    <section class="step" data-bg="forest" aria-label="The date">
+      <span class="kicker">Save the date</span>
+      <div class="datebox">
+        <span class="day">29</span>
+        <span class="rest"><span>Sunday</span><span>November</span><span>2026</span></span>
+      </div>
+      <p class="lead">Clear the whole day. Not the morning, not the afternoon. The whole day.</p>
+      <div class="cd" role="timer" aria-live="off">
+        <div><b id="cdD">--</b><span>Days</span></div>
+        <div><b id="cdH">--</b><span>Hrs</span></div>
+        <div><b id="cdM">--</b><span>Min</span></div>
+        <div><b id="cdS">--</b><span>Sec</span></div>
+      </div>
+      <p class="small" id="cdNote">Pickup time and place will be sent closer to the day.</p>
+    </section>
+
+    <!-- 3 plan -->
+    <section class="step" data-bg="sun" aria-label="The plan">
+      <span class="kicker">The plan, roughly</span>
+      <h2 class="disp">One road trip. Five stops.</h2>
+      <ol class="plan">
+        <li><span class="dot">GO</span><div><b>The road trip</b><span>Good music, good company, destination classified.</span></div></li>
+        <li><span class="dot">01</span><div><b>Breakfast</b><span>Your choice. You’ll pick in a minute.</span></div></li>
+        <li><span class="dot sec">??</span><div><b>Activity one</b><span>Top secret.</span></div></li>
+        <li><span class="dot">02</span><div><b>Lunch</b><span>Also your choice.</span></div></li>
+        <li><span class="dot sec">??</span><div><b>Activity two</b><span>Even more top secret.</span></div></li>
+      </ol>
+      <p class="lead">Your part: show up, eat well, enjoy. Everything else is handled.</p>
+    </section>
+
+    <!-- 4 dress code -->
+    <section class="step" data-bg="orange" aria-label="Dress code">
+      <span class="kicker">Dress code</span>
+      <h2 class="dress-word">Sport casual.</h2>
+      <p class="lead">Comfortable enough for a road trip and two mystery activities. Cute enough for a lot of photos.</p>
+      <div class="rulings">
+        <div class="ruling yes"><b>Yes</b><span>Your favorite sneakers</span></div>
+        <div class="ruling yes"><b>Yes</b><span>Something comfy you love being photographed in</span></div>
+        <div class="ruling yes"><b>Yes</b><span>A layer, just in case</span></div>
+        <div class="ruling no"><b>No</b><span>Heels that turn walking into a sport</span></div>
+      </div>
+    </section>
+
+    <!-- 5 secrets -->
+    <section class="step" data-bg="tomato" aria-label="The two secret activities">
+      <span class="kicker">The two activities</span>
+      <h2 class="disp">Scratch to reveal.</h2>
+      <div class="scratches">
+        <div class="scratch">
+          <span class="lbl">Activity 01</span>
+          <span class="ans">Nice try.</span>
+          <span class="hint">It’s top secret. You’ll love it though.</span>
+          <canvas data-scratch="Activity 01" aria-hidden="true"></canvas>
+        </div>
+        <div class="scratch">
+          <span class="lbl">Activity 02</span>
+          <span class="ans">Still top secret.</span>
+          <span class="hint">Patience is part of the activity.</span>
+          <canvas data-scratch="Activity 02" aria-hidden="true"></canvas>
+        </div>
+      </div>
+      <button class="linkbtn" type="button" id="revealAll">Can’t scratch? Reveal both</button>
+    </section>
+
+    <!-- 6 breakfast -->
+    <section class="step" data-bg="cream" aria-label="Breakfast" data-check="breakfast">
+      <span class="kicker">Question 1 of 4</span>
+      <h2 class="disp" id="bfTitle">Breakfast. What are we having?</h2>
+      <p class="small">Pick one or more. These are ideas, not a fixed menu.</p>
+      <fieldset style="border:0;margin:0;padding:0;min-width:0" aria-labelledby="bfTitle">
+        <div class="chips" id="breakfastOpts"></div>
+      </fieldset>
+      <div class="tf" id="tf-breakfastOther" hidden>
+        <label for="breakfastOther">Your “Other” breakfast</label>
+        <input id="breakfastOther" type="text" maxlength="200" placeholder="Tell me exactly">
+      </div>
+      <div class="tf">
+        <label for="breakfastNotes">Anything specific? <span class="small">(optional)</span></label>
+        <input id="breakfastNotes" type="text" maxlength="300" placeholder="A place, a dish, extra cheese…">
+      </div>
+      <p class="err" id="err-breakfast" role="alert" hidden></p>
+    </section>
+
+    <!-- 7 drink -->
+    <section class="step" data-bg="sun" aria-label="Morning drink" data-check="drink">
+      <span class="kicker">Question 2 of 4</span>
+      <h2 class="disp" id="drTitle">Coffee, tea, juice, or something else?</h2>
+      <p class="small">Pick one. The first drink of the day matters.</p>
+      <fieldset style="border:0;margin:0;padding:0;min-width:0" aria-labelledby="drTitle">
+        <div class="chips" id="drinkOpts"></div>
+      </fieldset>
+      <div class="tf" id="tf-drinkOther" hidden>
+        <label for="drinkOther">What should we get you?</label>
+        <input id="drinkOther" type="text" maxlength="120" placeholder="e.g. Iced latte, oat milk">
+      </div>
+      <p class="err" id="err-drink" role="alert" hidden></p>
+    </section>
+
+    <!-- 8 lunch -->
+    <section class="step" data-bg="forest" aria-label="Lunch" data-check="lunch">
+      <span class="kicker">Question 3 of 4</span>
+      <h2 class="disp" id="luTitle">And lunch?</h2>
+      <p class="small">Pick as many as sound good.</p>
+      <fieldset style="border:0;margin:0;padding:0;min-width:0" aria-labelledby="luTitle">
+        <div class="chips" id="lunchOpts"></div>
+      </fieldset>
+      <div class="tf" id="tf-lunchOther" hidden>
+        <label for="lunchOther">Your “Other” lunch</label>
+        <input id="lunchOther" type="text" maxlength="200" placeholder="Tell me exactly">
+      </div>
+      <div class="tf">
+        <label for="lunchCraving">A dish you’re craving? <span class="small">(optional)</span></label>
+        <input id="lunchCraving" type="text" maxlength="200">
+      </div>
+      <p class="err" id="err-lunch" role="alert" hidden></p>
+    </section>
+
+    <!-- 9 details -->
+    <section class="step" data-bg="cream" aria-label="Food details">
+      <span class="kicker">Question 4 of 4</span>
+      <h2 class="disp">Anything I should know?</h2>
+      <div class="tf">
+        <label for="lunchAvoid">Anything you don’t eat or would rather avoid?</label>
+        <input id="lunchAvoid" type="text" maxlength="200" placeholder="Optional">
+      </div>
+      <div class="tf">
+        <label for="dietary">Allergies or dietary requirements?</label>
+        <textarea id="dietary" maxlength="400" placeholder="Optional, but please mention anything serious"></textarea>
+      </div>
+      <p class="small">All optional. Skip it if there’s nothing to add.</p>
+    </section>
+
+    <!-- 10 rsvp -->
+    <section class="step" data-bg="tomato" aria-label="RSVP" data-check="rsvp">
+      <span class="kicker">The important part</span>
+      <h2 class="disp" id="rsvpTitle">So, Imanooo, are you in?</h2>
+      <div class="rsvp" role="group" aria-labelledby="rsvpTitle" id="rsvpGroup">
+        <button class="rbtn" type="button" data-rsvp="yes" aria-pressed="false">Yes! Let’s go</button>
+        <button class="rbtn" type="button" data-rsvp="obviously" aria-pressed="false">Obviously. I’m turning 28!</button>
+        <button class="rbtn" type="button" data-rsvp="info" aria-pressed="false">I have a question first</button>
+      </div>
+      <div class="yay" id="yay" hidden>
+        <span class="disp">Yay!</span>
+        <p><strong>You’re officially in.</strong> Sunday, November 29. Sport casual. Two secrets waiting.</p>
+      </div>
+      <div class="tf" id="tf-question" hidden>
+        <label for="question" style="color:var(--cream)">Ask away. (The secrets stay secret.)</label>
+        <textarea id="question" maxlength="500" placeholder="e.g. Do I need a jacket?"></textarea>
+        <p class="small">You can still say yes above.</p>
+      </div>
+      <p class="err" id="err-rsvp" role="alert" hidden></p>
+    </section>
+
+    <!-- 11 send -->
+    <section class="step" data-bg="forest" aria-label="Send your answers">
+      <span class="kicker">Last step</span>
+      <h2 class="disp">Send me your answers.</h2>
+      <p class="small">Check them, then send. Nothing is sent until you tap send in WhatsApp yourself.</p>
+      <pre class="preview" id="preview" aria-label="Your answers"></pre>
+      <p class="err" id="err-send" role="alert" hidden></p>
+      <a class="big-btn" id="waBtn" href="https://wa.me/" target="_blank" rel="noopener">Send on WhatsApp</a>
+      <button class="big-btn ghost" id="copyBtn" type="button">Copy my answers</button>
+      <p class="toast" id="toast" aria-live="polite"></p>
+      <textarea class="copy-fallback" id="copyFallback" hidden readonly aria-label="Your answers as text"></textarea>
+    </section>
+
+    <!-- 12 note -->
+    <section class="step" data-bg="sun" aria-label="A note for you">
+      <span class="kicker">One more thing</span>
+      <div class="letter">
+        <p>Dear <span id="letterName">Imanooo</span>,</p>
+        <p>No jokes on this page.</p>
+        <p>You bring so much warmth and laughter to the people around you that it felt right to give you a day that’s completely yours: the open road, food you picked, two surprises, and absolutely nothing to organize.</p>
+        <p>I hope 28 is your best chapter yet.</p>
+        <p class="sig" id="letterSig">See you on the road</p>
+        <span class="stampmark" aria-hidden="true">28</span>
+      </div>
+    </section>
+  </div>
+
+  <nav class="nav" aria-label="Story navigation">
+    <button class="back" id="backBtn" type="button" disabled>Back</button>
+    <span class="count" id="count">1 / 12</span>
+    <button class="next" id="nextBtn" type="button">Let’s go</button>
+  </nav>
+</div>
+<canvas id="confetti" aria-hidden="true" hidden></canvas>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
