@@ -6,7 +6,7 @@ window.CONFIG = {
   myName: "",             // e.g. "Mohammad". Signs the note at the end.
   // Your WhatsApp number, digits only, international format (Lebanon: 961 + number without the leading 0).
   // Leave "" and WhatsApp will ask her which chat to send to.
-  whatsappNumber: "",
+  whatsappNumber: "+961 71139833",
   eventStart: "2026-11-29T00:00:00+02:00",   // countdown target (Beirut is UTC+2 in November)
   eventDateLabel: "Sunday, November 29, 2026",
 
